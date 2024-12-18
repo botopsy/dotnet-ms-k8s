@@ -12,4 +12,4 @@ patches:
     path: ingress.yaml
 images:
   - name: ghcr.io/botopsy/dotnet-ms
-    newTag: fe6df9c
+    newTag: ec052a2
