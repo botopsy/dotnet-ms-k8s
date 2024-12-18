@@ -2,9 +2,7 @@ kind: Kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
 resources:
   - ../../base
-
 nameSuffix: -dev
-
 patches:
   - target:
       group: networking.k8s.io
@@ -12,7 +10,6 @@ patches:
       kind: Ingress
       name: dotnet-ms-ingress
     path: ingress.yaml
-
 images:
   - name: ghcr.io/botopsy/dotnet-ms
-    newTag: latest
+    newTag: fe6df9c
