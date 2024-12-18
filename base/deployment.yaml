@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnet-ms
+  labels:
+    app: dotnet-ms
+    backstage.io/kubernetes-id: dotnet-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnet-ms
+  template:
+    metadata:
+      labels:
+        app: dotnet-ms
+        backstage.io/kubernetes-id: dotnet-ms
+    spec:
+      imagePullSecrets:
+        - name: dockerconfigjson-github-com
+      containers:
+        - name: dotnet-ms
+          image: ghcr.io/botopsy/dotnet-ms:latest
+          ports:
+            - containerPort: 3000

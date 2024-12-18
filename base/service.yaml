@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotnet-ms-service
+  labels:
+    backstage.io/kubernetes-id: dotnet-ms
+spec:
+  selector:
+    app: dotnet-ms
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  type: ClusterIP
